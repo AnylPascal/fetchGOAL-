@@ -1,4 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+class Thecall extends Component {
+	render() {
+		return (
+			<div>
+				
+			</div>
+		);
+	}
+}
+
+export default Thecall;
 
 var unirest = require('unirest');
 
@@ -18,3 +30,5 @@ req.end(function (res) {
 
 	console.log(res.body);
 });
+
+export default Thecall;
