@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 
+class Dashboard extends React.ChildrenComponent {
+	state = {
+		loading: true,
+	};
 
+	
 
-
-class Dashboard extends Component {
-
-    render() {
-        return (
-            <li>
-                
-            </li>
-        );
-    }
+	render() {
+		return (
+			<div>
+				{this.state.loading ? <div>loading...</div> : <div>game..</div>}
+			</div>
+		);
+	}
 }
 
 export default Dashboard;

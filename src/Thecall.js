@@ -19,4 +19,3 @@ req.end(function (res) {
 	console.log(res.body);
 });
 
-export default Thecall;
