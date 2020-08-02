@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-class Dashboard extends React.ChildrenComponent {
+class Dashboard extends React.Component {
 	state = {
 		loading: true,
 	};
-
-	
 
 	render() {
 		return (
