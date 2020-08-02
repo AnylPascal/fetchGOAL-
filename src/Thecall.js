@@ -1,10 +1,10 @@
-import React from 'react-router-dom'
+import React from 'react';
 
 var unirest = require('unirest');
 
 var req = unirest(
 	'GET',
-	'https://api-football-v1.p.rapidapi.com/v2/predictions/157462'
+	'https://api-football-v1.p.rapidapi.com/v2/lineups/157215'
 );
 
 req.headers({
@@ -18,4 +18,3 @@ req.end(function (res) {
 
 	console.log(res.body);
 });
-
