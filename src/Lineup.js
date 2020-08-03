@@ -13,7 +13,8 @@ class Lineup extends Component {
 				{teams.map((team) => (
 					<div>
 						{' '}
-						<div>{team.name}</div>{' '}
+						<div>{team.name}</div> <div>{team.coach}</div>
+						<div>{team.formation}</div>
 					</div>
 				))}{' '}
 			</div>

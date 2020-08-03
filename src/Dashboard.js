@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import lineup from "./Lineup"
 
 class Dashboard extends Component {
-	state = {
-		loading: true,
-	};
-
 	render() {
-		return <div>{this.state.lineUps}</div>;
+		return (
+			<div className='dashboard'>
+				
+			</div>
+		);
 	}
 }
 

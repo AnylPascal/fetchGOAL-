@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 import Header from './Header';
 import Lineup from './Lineup';
 
-const apiKey = process.env.REACT_APP_MYKEY;
+const apiKey = process.env.REACT_APP_MY_KEY;
 
 class App extends React.Component {
 	constructor(props) {
@@ -55,10 +55,10 @@ class App extends React.Component {
 					}}
 				/>
 				<Route
-					path='/link-ups'
+					path='/dashboard'
 					exact
 					render={() => {
-						return <Lineup teams={this.teams} />;
+						return <Dashboard teams={this.teams} />;
 					}}
 				/>
 			</div>
