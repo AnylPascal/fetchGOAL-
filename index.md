@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+# Project Proposal Example
 
-You can use the [editor on GitHub](https://github.com/AnylPascal/fetchGOAL-/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Project Description
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+My app is call fetchGoal. It's an app for fanatic futbol(Football) fans. Users can see a list of all the current matches being played, and the country they are taken place in. Once users can also click on team and see information regarding the team in terms of current coaches, players on roster, times zones, as well as the current olds for the match.
 
-### Markdown
+## Wireframes
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Home Page
 
-```markdown
-Syntax highlighted code block
+![](https://i.imgur.com/BstIhFj.jpg 'fetchGoal/Home')
 
-# Header 1
-## Header 2
-### Header 3
+### fetchGoal Indepth
 
-- Bulleted
-- List
+![](https://i.imgur.com/HQKX4Zk.jpg 'fetchGoal/Indepth')
 
-1. Numbered
-2. List
+## MVP User Stories
 
-**Bold** and _Italic_ and `Code` text
+### _MVP User Stories_
 
-[Link](url) and ![Image](src)
-```
+- As a user, I want to see a listing of the current matches being played by season and/or country so that I can consider which ones I might want to watch.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- As a user, I would like to click on an individual match to view additional details about it including the current roster, current coaching staff, and Odds from current bookmakers that are available.
 
-### Jekyll Themes
+- As a user, I want to be able to easily navigate the fetchGoal app on my mobile device so that I can see match details while I'm on the go.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AnylPascal/fetchGOAL-/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Post MVP Stretch Goals
 
-### Support or Contact
+- As, a user, I would like to search for a team by name so I can follow my favorite team.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- As a user, I would like to filter matches by country, so that I can more easily select matches based on where I am located at the moment.
+
+- As a user, I would like to be able to search for a player on any given team incase the player might have been transferred
+
+## API Documentation 
+
+
+[The fetchGoal DB API Documentation](api-football-v1.p.rapidapi.com)
+
+### Current Matches Response
+
+### Current Roster Response
+
+### Current Caching Staff Response
+
+### Current Odds From Current Bookmakers Response
+
+#### OPTIONAL Component Details
+
+| Component | Description                                                      | State/Props |
+| --------- | ---------------------------------------------------------------- | ----------- |
+| App       | This will make the initial data request and include React Router | State       |
+| --------- | -----------                                                      | ----------  |
+| Header    | This will render the header & nav                                | Props       |
+| --------- | -----------                                                      | ----------- |
+| FetchGoal | This will render all the matches                                 | Props       |
