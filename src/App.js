@@ -20,7 +20,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch('https://api-football-v1.p.rapidapi.com/v2/predictions/157462', {
+		fetch('https://api-football-v1.p.rapidapi.com/v2/lineups/157215', {
 			method: 'GET',
 			headers: {
 				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
@@ -38,54 +38,8 @@ class App extends React.Component {
 				this.setState({
 					...this.state,
 					loading: false,
-					data: response.api.predictions[0],
+					data: response.api.lineUps,
 				});
-			});
-
-		fetch('https://api-football-v1.p.rapidapi.com/v2/lineups/157215', {
-			method: 'GET',
-			headers: {
-				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-				'x-rapidapi-key': apiKey,
-			},
-		})
-			.then((response) => {
-				console.log(response);
-
-				return response.json();
-			})
-			.then((response) => {
-				console.log(response.api.lineUps);
-
-				this.setState({
-					...this.state,
-					lineUps: response.api.lineUps,
-				});
-			});
-
-		fetch('https://api-football-v1.p.rapidapi.com/v2/odds/labels/', {
-			method: 'GET',
-			headers: {
-				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-				'x-rapidapi-key': apiKey,
-			},
-		})
-			.then((response) => {
-				console.log(response);
-
-				return response.json();
-			})
-			.then((response) => {
-				console.log(response.api.odds);
-
-				this.setState({
-					...this.state,
-					comparison: response.api.odds,
-				});
-			})
-
-			.catch((err) => {
-				console.log(err);
 			});
 	}
 
@@ -97,11 +51,16 @@ class App extends React.Component {
 					path='/'
 					exact
 					render={() => {
-						return <Lineup lineUps={this.state.lineUps} />;
+						return <Lineup lineUps={this.state.data} />;
 					}}
 				/>
-
-				
+				<Route
+					path='/link-ups'
+					exact
+					render={() => {
+						return <Lineup teams={this.teams} />;
+					}}
+				/>
 			</div>
 		);
 	}
