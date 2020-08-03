@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# fetchGOAL
 
-## Available Scripts
+# Project Proposal Example
 
-In the project directory, you can run:
+## Project Description
 
-### `yarn start`
+My app is call fetchGoal. It's an app for fanatic futbol(Football) fans. Users can see a list of all the current matches being played, and the country they are taken place in. Once users can also click on team and see information regarding the team in terms of current coaches, players on roster, times zones, as well as the current olds for the match.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wireframes
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Home Page
 
-### `yarn test`
+![](https://i.imgur.com/BstIhFj.jpg 'fetchGoal/Home')
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### fetchGoal Indepth
 
-### `yarn build`
+![](https://i.imgur.com/HQKX4Zk.jpg 'fetchGoal/Indepth')
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## MVP User Stories
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### _MVP User Stories_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- As a user, I want to see a listing of the current matches being played by season and/or country so that I can consider which ones I might want to watch.
 
-### `yarn eject`
+- As a user, I would like to click on an individual match to view additional details about it including the current roster, current coaching staff, and Odds from current bookmakers that are available.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- As a user, I want to be able to easily navigate the fetchGoal app on my mobile device so that I can see match details while I'm on the go.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Post MVP Stretch Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- As, a user, I would like to search for a team by name so I can follow my favorite team.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- As a user, I would like to filter matches by country, so that I can more easily select matches based on where I am located at the moment.
 
-## Learn More
+- As a user, I would like to be able to search for a player on any given team incase the player might have been transferred
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Documentation 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+[The fetchGoal DB API Documentation](api-football-v1.p.rapidapi.com)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Current Matches Response
 
-### Analyzing the Bundle Size
+### Current Roster Response
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Current Caching Staff Response
 
-### Making a Progressive Web App
+### Current Odds From Current Bookmakers Response
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### OPTIONAL Component Details
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Component | Description                                                      | State/Props |
+| --------- | ---------------------------------------------------------------- | ----------- |
+| App       | This will make the initial data request and include React Router | State       |
+| --------- | -----------                                                      | ----------  |
+| Header    | This will render the header & nav                                | Props       |
+| --------- | -----------                                                      | ----------- |
+| FetchGoal | This will render all the matches                                 | Props       |
