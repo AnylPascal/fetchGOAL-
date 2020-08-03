@@ -4,7 +4,6 @@ import './App.css';
 import { Route, Link } from 'react-router-dom';
 import Dashboard from './Dashboard';
 
-
 const apiKey = process.env.REACT_APP_MYKEY;
 
 class App extends React.Component {
@@ -14,6 +13,7 @@ class App extends React.Component {
 			data: {},
 			loading: true,
 			lineUps: {},
+			comparison: {},
 		};
 	}
 
@@ -59,15 +59,39 @@ class App extends React.Component {
 					...this.state,
 					lineUps: response.api.lineUps,
 				});
+			});
+
+		fetch('https://api-football-v1.p.rapidapi.com/v2/odds/labels/', {
+			method: 'GET',
+			headers: {
+				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+				'x-rapidapi-key': apiKey,
+			},
+		})
+			.then((response) => {
+				console.log(response);
+
+				return response.json();
 			})
+			.then((response) => {
+				console.log(response.api.comparison);
+
+				this.setState({
+					...this.state,
+					comparison: response.api.comparison,
+				});
+			})
+
+
+
+			
+
 			.catch((err) => {
 				console.log(err);
 			});
 	}
 
 	render() {
-
-
 		return (
 			<div className='App'>
 				<div className='App-header'>

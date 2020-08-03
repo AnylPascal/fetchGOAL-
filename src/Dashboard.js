@@ -7,9 +7,11 @@ class Dashboard extends React.Component {
 
 	render() {
 		return (
+			
 			<div>
 				{this.state.loading ? <div>loading...</div> : <div>game..</div>}
 			</div>
+			
 		);
 	}
 }
