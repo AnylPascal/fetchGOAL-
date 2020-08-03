@@ -41,6 +41,27 @@ class App extends React.Component {
 					data: response.api.lineUps,
 				});
 			});
+
+		fetch('https://api-football-v1.p.rapidapi.com/v2/odds/labels/', {
+			method: 'GET',
+			headers: {
+				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+				'x-rapidapi-key': apiKey,
+			},
+		})
+			.then((response) => {
+				console.log(response);
+				return response.json();
+			})
+			.then((response) => {
+				console.log(response);
+
+				this.setState({
+					...this.state,
+					loading: false,
+					data: response.api.odds,
+				});
+			});
 	}
 
 	render() {
