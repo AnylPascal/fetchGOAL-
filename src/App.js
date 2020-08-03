@@ -79,7 +79,7 @@ class App extends React.Component {
 					path='/dashboard'
 					exact
 					render={() => {
-						return <Dashboard teams={this.teams} />;
+						return <Dashboard odds={this.state.data} />;
 					}}
 				/>
 			</div>
