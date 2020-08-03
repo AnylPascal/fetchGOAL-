@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, Link } from 'react-router-dom';
 import Dashboard from './Dashboard';
+import Header from './Header';
+import Lineup from './Lineup';
 
 const apiKey = process.env.REACT_APP_MYKEY;
 
@@ -13,7 +15,7 @@ class App extends React.Component {
 			data: {},
 			loading: true,
 			lineUps: {},
-			comparison: {},
+			odds: {},
 		};
 	}
 
@@ -74,17 +76,13 @@ class App extends React.Component {
 				return response.json();
 			})
 			.then((response) => {
-				console.log(response.api.comparison);
+				console.log(response.api.odds);
 
 				this.setState({
 					...this.state,
-					comparison: response.api.comparison,
+					comparison: response.api.odds,
 				});
 			})
-
-
-
-			
 
 			.catch((err) => {
 				console.log(err);
@@ -94,15 +92,16 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='App'>
-				<div className='App-header'>
-					<img src={logo} className='App-logo' alt='logo' />
-					<nav>
-						<Link to='/'></Link>
-					</nav>
-					<main>
-						<Route path='/' component={Dashboard} />
-					</main>
-				</div>
+				<Header />
+				<Route
+					path='/'
+					exact
+					render={() => {
+						return <Lineup lineUps={this.state.lineUps} />;
+					}}
+				/>
+
+				
 			</div>
 		);
 	}

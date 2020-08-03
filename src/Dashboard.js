@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 
-class Dashboard extends React.Component {
+class Dashboard extends Component {
 	state = {
 		loading: true,
 	};
 
 	render() {
-		return (
-			
-			<div>
-				{this.state.loading ? <div>loading...</div> : <div>game..</div>}
-			</div>
-			
-		);
+		return <div>{this.state.lineUps}</div>;
 	}
 }
 
