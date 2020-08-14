@@ -7,11 +7,11 @@ class Lineup extends Component {
 		for (const team in this.props.lineUps) {
 			teams.push({ name: team, ...this.props.lineUps[team] });
 		}
-		console.log(teams);
+
 		return (
 			<div>
 				{teams.map((team) => (
-					<div>
+					<div key={team.name}>
 						{' '}
 						<div>{team.name}</div> <div>{team.coach}</div>
 						<div>{team.formation}</div>

@@ -15,7 +15,7 @@ class App extends React.Component {
 			data: {},
 			loading: true,
 			lineUps: {},
-			odds: {},
+			odds: {}, 
 		};
 	}
 
@@ -28,12 +28,12 @@ class App extends React.Component {
 			},
 		})
 			.then((response) => {
-				console.log(response);
+				
 
 				return response.json();
 			})
 			.then((response) => {
-				console.log(response);
+				
 
 				this.setState({
 					...this.state,
@@ -50,11 +50,11 @@ class App extends React.Component {
 			},
 		})
 			.then((response) => {
-				console.log(response);
+				
 				return response.json();
 			})
 			.then((response) => {
-				console.log(response);
+				
 
 				this.setState({
 					...this.state,
