@@ -15,7 +15,7 @@ class App extends React.Component {
 			data: {},
 			loading: true,
 			lineUps: {},
-			odds: {}, 
+			odds: {},
 		};
 	}
 
@@ -28,13 +28,9 @@ class App extends React.Component {
 			},
 		})
 			.then((response) => {
-				
-
 				return response.json();
 			})
 			.then((response) => {
-				
-
 				this.setState({
 					...this.state,
 					loading: false,
@@ -42,7 +38,7 @@ class App extends React.Component {
 				});
 			});
 
-		fetch('https://api-football-v1.p.rapidapi.com/v2/odds/labels/', {
+		fetch('https://api-football-v1.p.rapidapi.com/v2/leagueTable/524', {
 			method: 'GET',
 			headers: {
 				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
@@ -50,16 +46,13 @@ class App extends React.Component {
 			},
 		})
 			.then((response) => {
-				
 				return response.json();
 			})
 			.then((response) => {
-				
-
 				this.setState({
 					...this.state,
 					loading: false,
-					data: response.api.odds,
+					data: response.api.standings,
 				});
 			});
 	}

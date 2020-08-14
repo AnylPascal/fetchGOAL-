@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
 	render() {
-		const teams = [];
+		const standings = [];
 
-		for (const team in this.props.dashboard) {
-			teams.push({ name: team, ...this.props.dashboard[team] });
+		for (const stats in this.props.dashboard) {
+			standings.push({ laliga: stats, ...this.props.dashboard[stats] });
 		}
 
 		return (
 			<div>
-				{teams.map((team) => (
-					<div key={team.name}>
+				{standings.map((stats) => (
+					<div key={stats.laliga}>
 						{' '}
-						<div>{team.name}</div> <div>{team.coach}</div>
-						<div>{team.formation}</div>
+						<div>{stats.laliga}</div> <div>{stats.coach}</div>
+						<div>{stats.formation}</div>
 					</div>
 				))}{' '}
 			</div>
