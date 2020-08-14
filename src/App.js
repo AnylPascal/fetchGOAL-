@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Route, Link } from 'react-router-dom';
-import Dashboard from './Dashboard';
+import Standings from './Standings';
 import Header from './Header';
 import Lineup from './Lineup';
 
@@ -72,7 +72,7 @@ class App extends React.Component {
 					path='/dashboard'
 					exact
 					render={() => {
-						return <Dashboard odds={this.state.data} />;
+						return <Standings standings={this.state.data} />;
 					}}
 				/>
 			</div>
