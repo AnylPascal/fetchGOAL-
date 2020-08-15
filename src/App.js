@@ -69,7 +69,7 @@ class App extends React.Component {
 					}}
 				/>
 				<Route
-					path='/dashboard'
+					path='/standings'
 					exact
 					render={() => {
 						return <Standings standings={this.state.data} />;

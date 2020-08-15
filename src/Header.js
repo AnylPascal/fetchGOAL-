@@ -8,6 +8,7 @@ class Header extends Component {
 				<h1>Lets Talk futbol and API's</h1>
 				<nav>
 					<Link to='/standings'>Team Details</Link>
+					<Link to='/'>Back Home</Link>
 				</nav>
 			</header>
 		);
