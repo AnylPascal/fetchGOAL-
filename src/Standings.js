@@ -17,6 +17,7 @@ class Standings extends Component {
 					</div>
 				))}{' '}
 				{''}
+				<Link to='/'>Back Home</Link>
 			</div>
 		);
 	}
