@@ -5,15 +5,15 @@ class Standings extends Component {
 	render() {
 		const api = [];
 
-		for (const where in this.props.api.standings) {
+		for (const where in this.props.standings) {
 			api.push({ name: where, ...this.props.standings[where] });
 		}
 		return (
 			<div>
 				{api.map((where) => (
-					<div key={where.api.standings}>
+					<div key={where.standings}>
 						{' '}
-						{''} <div>{where.api.standings}</div>{' '}
+						<div>{where.logo}</div>{' '}
 					</div>
 				))}{' '}
 				{''}

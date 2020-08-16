@@ -33,7 +33,7 @@ class App extends React.Component {
 			.then((response) => {
 				this.setState({
 					...this.state,
-					loading: false,
+					loading: true,
 					data: response.api.lineUps,
 				});
 			});
@@ -51,7 +51,7 @@ class App extends React.Component {
 			.then((response) => {
 				this.setState({
 					...this.state,
-					loading: false,
+					loading: true,
 					data: response.api.standings,
 				});
 			});
