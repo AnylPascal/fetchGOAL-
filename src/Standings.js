@@ -5,15 +5,30 @@ class Standings extends Component {
 	render() {
 		const api = [];
 
+		const players = [];
+
 		for (const where in this.props.standings) {
 			api.push({ name: where, ...this.props.standings[where] });
+
+			console.log(where.startXI);
 		}
+
+		for (const standing of api) {
+			// console.log(standing.startXI);
+			const team = standing.startXI;
+
+			for (const player of team) {
+				players.push(player);
+				// console.log(player);
+			}
+		}
+		console.log(players);
 		return (
 			<div>
-				{api.map((where) => (
-					<div key={where.standings}>
-						{' '}
-						<div>{where.logo}</div>{' '}
+				{players.map((where, index) => (
+					<div key={index}>
+						{where.player} <div>{where.number}</div>
+						<div>{where.pos}</div>{' '}
 					</div>
 				))}{' '}
 				{''}

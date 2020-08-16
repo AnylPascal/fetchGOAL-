@@ -15,7 +15,7 @@ class Lineup extends Component {
 						{' '}
 						<div>{team.name}</div> <div>{team.coach}</div>
 						<div>{team.formation}</div>
-						<div>{team.startXI}</div>
+					
 					</div>
 				))}{' '}
 			</div>

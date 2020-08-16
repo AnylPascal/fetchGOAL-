@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { motion } from 'framer-motion';
 import { Route, Link } from 'react-router-dom';
 import Standings from './Standings';
 import Header from './Header';
@@ -15,7 +16,7 @@ class App extends React.Component {
 			data: {},
 			loading: true,
 			lineUps: {},
-			odds: {},
+			standings: {},
 		};
 	}
 
@@ -52,7 +53,7 @@ class App extends React.Component {
 				this.setState({
 					...this.state,
 					loading: true,
-					data: response.api.standings,
+					data: response.api.results.standings,
 				});
 			});
 	}
