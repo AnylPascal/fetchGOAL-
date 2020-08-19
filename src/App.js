@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { motion } from 'framer-motion';
 import { Route, Link } from 'react-router-dom';
-import Dashboard from './Dashboard';
+import Standings from './Standings';
 import Header from './Header';
 import Lineup from './Lineup';
 
@@ -15,7 +16,7 @@ class App extends React.Component {
 			data: {},
 			loading: true,
 			lineUps: {},
-			odds: {},
+			standings: {},
 		};
 	}
 
@@ -28,21 +29,17 @@ class App extends React.Component {
 			},
 		})
 			.then((response) => {
-				console.log(response);
-
 				return response.json();
 			})
 			.then((response) => {
-				console.log(response);
-
 				this.setState({
 					...this.state,
-					loading: false,
+					loading: true,
 					data: response.api.lineUps,
 				});
 			});
 
-		fetch('https://api-football-v1.p.rapidapi.com/v2/odds/labels/', {
+		fetch('https://api-football-v1.p.rapidapi.com/v2/leagueTable/524', {
 			method: 'GET',
 			headers: {
 				'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
@@ -50,16 +47,13 @@ class App extends React.Component {
 			},
 		})
 			.then((response) => {
-				console.log(response);
 				return response.json();
 			})
 			.then((response) => {
-				console.log(response);
-
 				this.setState({
 					...this.state,
-					loading: false,
-					data: response.api.odds,
+					loading: true,
+					data: response.api.results.standings,
 				});
 			});
 	}
@@ -76,10 +70,10 @@ class App extends React.Component {
 					}}
 				/>
 				<Route
-					path='/dashboard'
+					path='/standings'
 					exact
 					render={() => {
-						return <Dashboard odds={this.state.data} />;
+						return <Standings standings={this.state.data} />;
 					}}
 				/>
 			</div>
